@@ -7,7 +7,7 @@ html {
     height: 400px;
     width: 550px;
     background-color: #2CCCC3;
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 4px 4px 0px 0px #16706c;
@@ -96,7 +96,7 @@ html {
     -ms-transition: all 0.2s;
 }
 
-#choice-d {
+#choice-4 {
     margin-right: 0;
 }
 
@@ -157,4 +157,164 @@ html {
     left: 45px;
     z-index: 2;
     display: none;
+}
+
+@media screen
+  and (max-width: 450px)
+   {
+    #container {
+        height: 400px;
+        width: 300px;
+        background-color: #2CCCC3;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 0px 0px #16706c;
+        -moz-box-shadow: 4px 4px 0px 0px #16706c;
+        -webkit-box-shadow: 4px 4px 0px 0px #16706c;
+        position: relative;
+    }
+
+    #score {
+        background-color: #00458B;
+        color: #F7F4E9;
+        padding: 11px;
+        position: absolute;
+        left: 16rem;
+        box-shadow: 3px 3px 0px 0px #072b4e;
+        -moz-box-box-shadow: 3px 3px 0px 0px #072b4e;
+        -webkit-box-shadow: 3px 3px 0px 0px #072b4e;
+    }
+
+    #correct {
+        position: absolute;
+        left: 10rem;
+        background-color: #4ECB4A;
+        color: #F7F4E9;
+        padding: 11px;
+        display: none;
+    }
+
+    #wrong {
+        position: absolute;
+        left: 10rem;
+        background-color: #E12B38;
+        color: #F7F4E9;
+        padding: 11px;
+        display: none;
+    }
+
+    #question {
+        width: 250px;
+        height: 100px;
+        margin: 50px auto 10px auto;
+        background-color: #99DDFF;
+        box-shadow: 3px 3px 0px 0px #015681;
+        -moz-box-box-shadow: 3px 3px 0px 0px #015681;
+        -webkit-box-shadow: 3px 3px 0px 0px #015681;
+        font-size: 100px;
+        text-align: center;
+        font-family: cursive, sans-serif;
+    }
+
+    #instuction {
+        width: 250px;
+        height: 50px;
+        background-color: #99DDFF;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 45px;
+        box-shadow: 3px 3px 0px 0px #015681;
+        -moz-box-box-shadow: 3px 3px 0px 0px #015681;
+        -webkit-box-shadow: 3px 3px 0px 0px #015681;
+    }
+
+    #choices {
+        width: 250px;
+        height: 80px;
+        display: flex;
+        margin: auto;
+    }
+
+    .box {
+        width: 60px;
+        height: 60px;
+        background-color: #F7F4E9;
+        float: left;
+        margin-right: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        line-height: 80px;
+        position: relative;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+    }
+
+    #choice-4 {
+        margin-right: 0;
+    }
+
+    .box:active, #start-reset-btn:active {
+        box-shadow: 0px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0px 0px rgba(0, 0, 0, 0.2);
+        top: 4px;
+    }
+
+    .box:hover, #start-reset-btn:hover {
+        background-color: #00458B;
+        color: #F7F4E9;
+    }
+
+    #start-reset-btn {
+        width: 90px;
+        background-color: #99DDFF;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        position: relative;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+    }
+
+    #time-remaining {
+        width: 150;
+        padding: 8px;
+        position: absolute;
+        top: 380px;
+        left: 75px;
+        background-color: #F3E367;
+        border-radius: 6px;
+        box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+        display: none;
+    }
+
+    #game-over {
+        width: 250px;
+        height: 80px;
+        padding-top: px;
+        background-color: #E12B38;
+        color: #F7F4E9;
+        font-size: 1.5em;
+        text-align: center;
+        text-transform: uppercase;
+        position: absolute;
+        top: 100px;
+        left: 45px;
+        z-index: 2;
+        display: none;
+    }
 }
