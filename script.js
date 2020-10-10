@@ -7,19 +7,11 @@ let satrtResetBtn = document.getElementById("start-reset-btn");
 let timeRemainingValue = document.getElementById("time-remaining-value");
 let question = document.getElementById("question");
 let correctAnswer;
-let choices = document.querySelector("#choices");
-
-choices.addEventListener("click", (e) => {
-  console.log(e.target.id);
-});
-
 //if we click on the start/reset button
 function startResetGame() {
-  if (playing) {
-    //if we are playing
+  if (playing) { //if we are playing
     location.reload(); //reload the page
-  } else {
-    //if we are not playing
+  } else { //if we are not playing
     playing = true;
     score = 0; //set score to 0
     scoreValue.innerHTML = score;
@@ -109,13 +101,3 @@ function hideElement(id) {
 function showElement(id) {
   document.getElementById(id).style.display = "block";
 }
-
-//if we click on the answer box
-//if we are playing
-//correct answer?
-//yes
-//incrase score
-//show correct box for 1 sec
-//generate new question
-//no
-//show try again box for 1 sec
