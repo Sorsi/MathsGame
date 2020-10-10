@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 let playing = false;
 let score;
+let scoreValue = document.getElementById("score-value");
 let gameOver = document.getElementById("game-over");
 let satrtResetBtn = document.getElementById("start-reset-btn");
 let timeRemainingValue = document.getElementById("time-remaining-value");
@@ -20,15 +21,38 @@ function startResetGame() {
   } else {
     //if we are not playing
     playing = true;
-    score = 22; //set score to 0
-    document.getElementById("score-value").innerHTML = score;
-    start = 6;
+    score = 0; //set score to 0
+    scoreValue.innerHTML = score;
+    start = 60;
     showElement("time-remaining"); //show countdown box
     hideElement("game-over");
     satrtResetBtn.innerHTML = "Reset Game"; //change button to reset
     startCountDown();
     generateQuestionAndAnswers();
   }
+}
+
+for (let i = 1; i < 5; i++) {
+  document.getElementById("choice-" + i).onclick = function () {
+    if (playing) {
+      if (this.innerHTML == correctAnswer) {
+        score++;
+        scoreValue.innerHTML = score;
+        hideElement("wrong");
+        showElement("correct");
+        setTimeout(function() {
+            hideElement("correct");
+        }, 1000);
+        generateQuestionAndAnswers();
+      } else {
+          hideElement("correct");
+          showElement("wrong");
+          setTimeout(function() {
+            hideElement("wrong");
+        }, 1000);
+      }
+    }
+  };
 }
 
 function startCountDown() {
@@ -71,9 +95,9 @@ function generateQuestionAndAnswers() {
         wrongAnswer =
           (1 + Math.round(Math.random() * 9)) *
           (1 + Math.round(Math.random() * 9));
-        } while (answers.indexOf(wrongAnswer) > -1);
-        document.getElementById("choice-" + i).innerHTML = wrongAnswer;
-        answers.push(wrongAnswer);
+      } while (answers.indexOf(wrongAnswer) > -1);
+      document.getElementById("choice-" + i).innerHTML = wrongAnswer;
+      answers.push(wrongAnswer);
     }
   }
 }
@@ -85,7 +109,6 @@ function hideElement(id) {
 function showElement(id) {
   document.getElementById(id).style.display = "block";
 }
-
 
 //if we click on the answer box
 //if we are playing
