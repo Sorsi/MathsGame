@@ -6,13 +6,13 @@ html {
 #container {
     height: 400px;
     width: 550px;
-    background-color: #C6AD8F;
+    background-color: #2CCCC3;
     margin: 100px auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 4px 4px 0px 0px #583309;
-    -moz-box-shadow: 4px 4px 0px 0px #583309;
-    -webkit-box-shadow: 4px 4px 0px 0px #583309;
+    box-shadow: 4px 4px 0px 0px #16706c;
+    -moz-box-shadow: 4px 4px 0px 0px #16706c;
+    -webkit-box-shadow: 4px 4px 0px 0px #16706c;
     position: relative;
 }
 
@@ -145,7 +145,8 @@ html {
 
 #game-over {
     width: 500px;
-    height: 200px;
+    height: 150px;
+    padding-top: 50px;
     background-color: #E12B38;
     color: #F7F4E9;
     font-size: 2.5em;
