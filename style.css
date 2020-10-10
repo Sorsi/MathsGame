@@ -133,7 +133,7 @@ html {
     width: 167px;
     padding: 10px;
     position: absolute;
-    top: 395px;
+    top: 392px;
     left: 400px;
     background-color: #F3E367;
     border-radius: 6px;
@@ -212,7 +212,7 @@ html {
         box-shadow: 3px 3px 0px 0px #015681;
         -moz-box-box-shadow: 3px 3px 0px 0px #015681;
         -webkit-box-shadow: 3px 3px 0px 0px #015681;
-        font-size: 100px;
+        font-size: 75px;
         text-align: center;
         font-family: cursive, sans-serif;
     }
@@ -246,7 +246,7 @@ html {
         cursor: pointer;
         box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
         text-align: center;
-        line-height: 80px;
+        line-height: 60px;
         position: relative;
         transition: all 0.2s;
         -webkit-transition: all 0.2s;
