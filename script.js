@@ -4,43 +4,20 @@ let score;
 let gameOver = document.getElementById("game-over");
 let satrtResetBtn = document.getElementById("start-reset-btn");
 let timeRemainingValue = document.getElementById("time-remaining-value");
-let questions = [
-  {
-    id: 1,
-    question: "2 x 2",
-    answerRight: 4,
-    answerWrongA: 5,
-    answerWrongB: 6,
-    answerWrongC: 94,
-  },
-  {
-    id: 2,
-    question: "4 x 5",
-    answerRight: 9,
-    answerWrongA: 34,
-    answerWrongB: 22,
-    answerWrongC: 43,
-  },
-  {
-    id: 3,
-    question: "12 - 9",
-    answerRight: 3,
-    answerWrongA: 4,
-    answerWrongB: 6,
-    answerWrongC: 97,
-  },
-];
+let question = document.getElementById("question");
+let correctAnswer;
+
 //if we click on the start/reset button
 function startResetGame() {
   if (playing) { //if we are playing
     location.reload(); //reload the page
   } else { //if we are not playing
-    hideElement("game-over");
     playing = true;
-    score = 66; //set score to 0
+    score = 22; //set score to 0
     document.getElementById("score-value").innerHTML = score;
     start = 6;
     showElement("time-remaining"); //show countdown box
+    hideElement("game-over");
     satrtResetBtn.innerHTML = "Reset Game"; //change button to reset
     startCountDown();
     generateQuestionAndAnswers();
@@ -69,7 +46,19 @@ function stopCountDown() {
 }
 
 function generateQuestionAndAnswers() {
+    let firstNumber = 1 + Math.round(Math.random()*9);
+    let secondNumber = 1 + Math.round(Math.random()*9);
+    correctAnswer = firstNumber * secondNumber;
+    question.innerHTML = `${firstNumber} x ${secondNumber}`;
+    let correctAnswerPosition = 1 + Math.round(Math.random()*3);
+    document.getElementById("choice-"+correctAnswerPosition).innerHTML = correctAnswer;
 
+    for (let i=1; i < 5; i++) {
+        if (i != correctAnswerPosition) {
+            let wrongAnswer = (1 + Math.round(Math.random()*9)) * (1 + Math.round(Math.random()*9));
+            document.getElementById("choice-"+i).innerHTML = wrongAnswer;
+        }
+    }
 }
 
 function hideElement(id) {
